@@ -86,7 +86,7 @@ async function submitDetails(e) {
   }
 
   try {
-    const response = await fetch("http://elb-402906584.us-east-1.elb.amazonaws.com/users/register", {
+    const response = await fetch("http://elb-975032315.us-east-1.elb.amazonaws.com/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

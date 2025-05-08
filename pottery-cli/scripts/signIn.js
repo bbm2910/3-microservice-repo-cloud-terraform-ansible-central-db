@@ -79,9 +79,9 @@ async function submitDetails(e) {
 
   let loginUrl;
   if (role === "potter") {
-    loginUrl = "http://elb-402906584.us-east-1.elb.amazonaws.com/users/potter/login";
+    loginUrl = "http://elb-975032315.us-east-1.elb.amazonaws.com/users/potter/login";
   } else if (role === "customer") {
-    loginUrl = "http://elb-402906584.us-east-1.elb.amazonaws.com/users/owner/login";
+    loginUrl = "http://elb-975032315.us-east-1.elb.amazonaws.com/users/owner/login";
   }
 
   try {

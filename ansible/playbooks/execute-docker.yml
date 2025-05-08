@@ -1,3 +1,35 @@
+- hosts: db
+  become: true
+  tasks:
+    - name: Update packages
+      yum:
+        name: '*'
+        state: latest
+      become: true
+
+    - name: Install Docker
+      yum:
+        name: docker
+        state: present
+      become: true
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+      become: true
+
+    - name: Run pottery-db container
+      docker_container:
+        name: pottery-db
+        image: emilesherrott/pottery-db-cloud:0.0.1.RELEASE
+        state: started
+        restart_policy: always
+        ports:
+          - "5432:5432"
+
+
 - hosts: production
   vars_files:
     - ../variables.yml

@@ -5,7 +5,7 @@ const plotlySection = document.querySelector('#plotly-section')
 const loadPottryIndex = async () => {
     try {
 
-        const response = await fetch('http://elb-402906584.us-east-1.elb.amazonaws.com/ceramics/')
+        const response = await fetch('http://elb-975032315.us-east-1.elb.amazonaws.com/ceramics/')
         const data = await response.json()
         console.log(data)
 
