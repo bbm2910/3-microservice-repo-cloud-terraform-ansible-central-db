@@ -1,9 +1,9 @@
-version: '3.9'
+version: "3.9"
 services:
   pottery-api:
-    image: emilesherrott/pottery-api-cloud:0.0.1.RELEASE
+    image: 1029bobby/pottery-api-cloud:0.0.1.RELEASE
     ports:
-      - '80:3000'
+      - "80:3000"
     environment:
       - DB_HOST=
     restart: always
@@ -11,14 +11,14 @@ services:
       - pottery-python
     networks:
       - pottery-network
-  
+
   pottery-python:
-    image: emilesherrott/pottery-python-cloud:0.0.1.RELEASE
+    image: 1029bobby/pottery-python-cloud:0.0.1.RELEASE
     ports:
-      - '3001:3001'
+      - "3001:3001"
     restart: always
     networks:
       - pottery-network
 
 networks:
-  pottery-network: 
+  pottery-network:
