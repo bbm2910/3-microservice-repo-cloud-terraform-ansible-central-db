@@ -42,7 +42,7 @@ resource "aws_instance" "db_server" {
     ami = "ami-0f88e80871fd81e91"
     key_name = "default-ec2"
     instance_type = "t2.micro"
-    vpc_security_group_ids = [aws_security_group.http_server_sg.id]
+    vpc_security_group_ids = [aws_security_group.db_server_sg.id]
 
     subnet_id = data.aws_subnets.default_subnets.ids[0]
 

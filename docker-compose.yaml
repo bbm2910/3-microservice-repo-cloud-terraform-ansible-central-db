@@ -5,7 +5,7 @@ services:
     ports:
       - '80:3000'
     environment:
-      - DB_HOST=172.31.66.200
+      - DB_HOST=
     restart: always
     depends_on:
       - pottery-python

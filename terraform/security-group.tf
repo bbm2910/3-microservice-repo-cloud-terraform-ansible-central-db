@@ -35,7 +35,31 @@ resource "aws_security_group_rule" "egress" {
 
 
 
+resource "aws_security_group" "db_server_sg" {
+  name   = "db_server_sg"
+  vpc_id = aws_default_vpc.default.id
+  tags = {
+    name = "http_server_sg"
+  }
+}
 
+resource "aws_security_group_rule" "db_ingress" {
+  type              = "ingress"
+  from_port         = 5432
+  to_port           = 5432
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.db_server_sg.id
+}
+
+resource "aws_security_group_rule" "db_egress" {
+  type = "egress"
+  from_port = 0
+  to_port = 0
+  protocol = -1
+  cidr_blocks = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.db_server_sg.id
+}
 
 
 
