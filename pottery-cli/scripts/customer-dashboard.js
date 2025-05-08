@@ -2,7 +2,7 @@ const potterySection = document.querySelector("#pottery-section");
 
 const loadPottryIndex = async () => {
   try {
-    const response = await fetch("http://localhost:3000/ceramics/");
+    const response = await fetch("http://elb-1125133799.us-east-1.elb.amazonaws.com/ceramics/");
     const data = await response.json();
     console.log(data);
 
@@ -79,7 +79,7 @@ async function handlePurchase(itemId, quantity, purchaseButton) {
 
   try {
     // Sending purchase data via fetch (or any other method for server interaction)
-    const response = await fetch("http://localhost:3000/sales/makeSale", {
+    const response = await fetch("http://elb-1125133799.us-east-1.elb.amazonaws.com/sales/makeSale", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
